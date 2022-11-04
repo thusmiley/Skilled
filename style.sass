@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap')
+
+$blue-gray: #666CA3
+$dark-blue: #13183F
+$gray: #83869a
+$hot-pink: #f74780
+$light-pink: #ffa7c3
+
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    text-decoration: 0
+    transition: all ease 0.2s
+
+body
+    font-family: 'Plus Jakarta Sans', sans-serif
+    background: linear-gradient(#ffffff 0%, #f2f2f2 100%)
+    text-rendering: optimizeSpeed
+
+h1
+    font-size: 56px
+    line-height: 70px
+    font-weight: 800
+
+h3
+    font-size: 32px
+    line-height: 40px
+    font-weight: 800
+
+p
+    font-size: 18px
+    line-height: 28px
+    font-weight: 500
+    color: $gray
+
+picture
+    width: 100%    
+
+.btn
+    font-size: 18px
+    line-height: 28px
+    font-weight: 700
+    border-radius: 50px
+    padding: 14px 32px
+    border: none
+    cursor: pointer
+    color: white
+    transition: all ease 0.3s
+    &:hover
+        opacity: 0.7
+
+.btn-black
+    background-color: $dark-blue
+   
+.btn-orange
+    background: linear-gradient( #ff6f48, #f02aa6)
+
+.btn-purple
+    background: linear-gradient(#4851ff, #f02aa6)
+
+.cta
+    font-size: 18px
+    color: $hot-pink   
+
+.container
+    max-width: 1110px
+    margin: 0 auto  
+    padding-inline: 20px
+
+#hero
+    position: relative
+    overflow: hidden
+    padding-bottom: 226px
+
+#header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: 24px
+    padding-bottom: 180px
+    cursor: pointer
+    
+
+#hero-text
+    max-width: 457px
+    p
+        margin-top: 29px
+        margin-bottom: 40px
+
+#hero-img
+    position: absolute
+    left: 53.4%
+    top: -20%
+    z-index: -1
+
+#courses
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 30px
+    row-gap: 56px
+    padding-bottom: 140px
+
+    
+#card1
+    background: linear-gradient( #ff6f48, #f02aa6)
+    color: white
+
+
+.card
+    position: relative
+    border-radius: 15px
+    background-color: white
+    padding: 40px 32px
+    cursor: pointer
+    h3
+        padding-bottom: 24px
+        padding-top: 32px
+    p
+        padding-bottom: 24px
+    img
+        position: absolute
+        margin-top: -65px
+    &:hover
+        box-shadow: 0px 26px 50px rgba(6, 22, 141, 0.0442381)
+        transition: all ease-in-out 0.5s
+        opacity: 0.7
+        transform: scale(1.03)
+
+footer
+    background-color: $dark-blue
+
+#footer
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: 32px
+    padding-bottom: 32px
+    img
+        cursor: pointer
+    
+
+
+@media screen and (max-width: 1200px)    
+    #hero-img
+        position: absolute
+        left: 55%
+        top: 0%
+        img
+            width: 70%
+    #header
+        padding-bottom: 100px
+    #hero
+        padding-bottom: 170px    
+    #courses
+        grid-template-columns: repeat(2, 1fr)
+    .card:hover
+        transform: scale(1)
+    .btn
+        font-size: 16px
+        line-height: 16px    
+
+@media screen and ( max-width: 800px )
+    h1
+        font-size: 40px
+    #hero-img
+        position: absolute
+        left: 55%
+        top: 5%
+        img
+            width: 70%
+        p
+            font-size: 16px    
+    h3
+        font-size: 20px        
+    #hero
+        padding-bottom: 140px
+    #header
+        padding-bottom: 100px
+    #courses
+        padding-bottom: 86px    
+
+@media screen and ( max-width:  640px)
+    .container
+        padding-inline: 16px
+    #header
+        padding-bottom: 38px
+    #hero
+        overflow: unset
+        flex-direction: column
+        padding-bottom: 30px
+        p
+            padding: 25px auto
+        h1
+            line-height: 51px
+        #hero-text
+            padding-bottom: 30px     
+    #hero-img
+        position: initial   
+        img
+            width: 100%
+    #courses
+        grid-template-columns: 1fr
+        row-gap: 40px
+        .card
+            padding: 32px 28px
+            img
+                margin-top: -60px
+            p
+                padding: 16px auto 24px auto    
+            &:hover
+                transform: unset
