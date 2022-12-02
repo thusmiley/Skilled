@@ -6,18 +6,17 @@ $gray: #83869a
 $hot-pink: #f74780
 $light-pink: #ffa7c3
 
-
 *
     margin: 0
     padding: 0
     box-sizing: border-box
-    text-decoration: 0
     transition: all ease 0.2s
 
 body
     font-family: 'Plus Jakarta Sans', sans-serif
     background: linear-gradient(#ffffff 0%, #f2f2f2 100%)
     text-rendering: optimizeSpeed
+    text-decoration: 0
 
 h1
     font-size: 56px
@@ -35,8 +34,9 @@ p
     font-weight: 500
     color: $gray
 
-picture
-    width: 100%    
+picture,
+img
+    max-width: 100%    
 
 .btn
     font-size: 18px
@@ -65,48 +65,50 @@ picture
     color: $hot-pink   
 
 .container
-    max-width: 1110px
+    width: 1110px
     margin: 0 auto  
-    padding-inline: 20px
 
+// Header    
 #hero
-    position: relative
     overflow: hidden
-    padding-bottom: 226px
+    h2
+        font-size: 36px
+        font-weight: 800
+
+.banner
+    position: relative
 
 #header
     display: flex
     justify-content: space-between
     align-items: center
     padding-top: 24px
-    padding-bottom: 180px
     cursor: pointer
-    
 
 #hero-text
-    max-width: 457px
+    padding: 180px 0 226px 0
+    width: 50%
     p
         margin-top: 29px
         margin-bottom: 40px
 
 #hero-img
     position: absolute
-    left: 53.4%
-    top: -20%
+    right: -335px
+    top: -146px
     z-index: -1
+    width: 80%
 
 #courses
     display: grid
     grid-template-columns: repeat(3, 1fr)
     gap: 30px
-    row-gap: 56px
+    row-gap: 80px
     padding-bottom: 140px
-
     
 #card1
     background: linear-gradient( #ff6f48, #f02aa6)
     color: white
-
 
 .card
     position: relative
@@ -114,6 +116,7 @@ picture
     background-color: white
     padding: 40px 32px
     cursor: pointer
+    height: 322px
     h3
         padding-bottom: 24px
         padding-top: 32px
@@ -127,9 +130,20 @@ picture
         transition: all ease-in-out 0.5s
         opacity: 0.7
         transform: scale(1.03)
-
+    .card-content
+        position: absolute
+        top: 0
+        left: 32px
+        padding: 32px 0 24px 0
+    .cta
+        position: absolute
+        bottom: 0
+        left: 32px
 footer
     background-color: $dark-blue
+    h2
+        color: white
+        font-size: 36px
 
 #footer
     display: flex
@@ -140,74 +154,81 @@ footer
     img
         cursor: pointer
     
-
-
-@media screen and (max-width: 1200px)    
+@media screen and (max-width: 1200px)  
+    .container
+        width: 689px  
+    #hero h2
+        font-size: 28px
+    #hero-text
+        padding: 99px 0 186px 0
+        width: 60%
+        h1
+            font-size: 40px
+            line-height: 51px
+        p
+            font-size: 16px
+            line-height: 28px
+            margin: 25px 0
     #hero-img
-        position: absolute
-        left: 55%
-        top: 0%
-        img
-            width: 70%
-    #header
-        padding-bottom: 100px
-    #hero
-        padding-bottom: 170px    
+        right: -360px
+        top: -190px
+        width: 100%
     #courses
         grid-template-columns: repeat(2, 1fr)
+        gap: 11px
+        row-gap: 56px
+        padding-bottom: 86px
+    .card
+        padding: 32px
+        height: 259px
+        h3
+            font-size: 20px  
+            padding: 24px 0 16px 0   
+        p
+            font-size: 16px
+            line-height: 26px       
     .card:hover
         transform: scale(1)
     .btn
         font-size: 16px
         line-height: 16px    
 
-@media screen and ( max-width: 800px )
-    h1
-        font-size: 40px
-    #hero-img
-        position: absolute
-        left: 55%
-        top: 5%
-        img
-            width: 70%
-        p
-            font-size: 16px    
-    h3
-        font-size: 20px        
-    #hero
-        padding-bottom: 140px
-    #header
-        padding-bottom: 100px
-    #courses
-        padding-bottom: 86px    
+    footer h2
+        font-size: 28px
 
-@media screen and ( max-width:  640px)
+@media screen and (max-width:  800px)
     .container
-        padding-inline: 16px
-    #header
-        padding-bottom: 38px
+        width: 343px
     #hero
-        overflow: unset
         flex-direction: column
-        padding-bottom: 30px
+    #hero-text
+        width: 100%
+        padding: 38px 0 46px 0
         p
-            padding: 25px auto
+            margin: 26px 0 24px 0
         h1
+            font-size: 40px
             line-height: 51px
-        #hero-text
-            padding-bottom: 30px     
+   
     #hero-img
-        position: initial   
-        img
-            width: 100%
+        position: initial
+        width: 100%
+
     #courses
         grid-template-columns: 1fr
         row-gap: 40px
         .card
             padding: 32px 28px
+            height: 259px
             img
                 margin-top: -60px
             p
                 padding: 16px auto 24px auto    
             &:hover
                 transform: unset
+        #card1
+            height: 120px    
+            h3
+                font-size: 24px
+                line-height: 32px   
+                padding: 0      
